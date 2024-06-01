@@ -1,193 +1,356 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>YT.Static.Clone</title>
-    <style>
-      #chrome-sponsor-title {
-        align-items: center;
-        justify-content: space-between;
-        font-family: "Roboto", "Arial", sans-serif;
-        font-weight: 550;
-        margin-top: 0;
-        margin-bottom: 0;
-        padding-top: 5px;
-        cursor: pointer;
-        color: rgb(15, 15, 15);
-        font-family: Roboto, Arial, sans-serif;
-    }#chrome-sec-title {
-        width: 300px;
-        font-size: 14.5px;
-        margin-top: 0;
-        padding-top: 8px;
-        margin-bottom: 0;
-        font-family: Roboto, Arial, sans-serif;
-      }.chrome-download-button {
-        color: #065fd4;
-        background-color: #def1ff;
-        padding: 0 16px;
-        height: 36px;
-        width: 300px;
-        font-size: 14px;
-        line-height: 36px;
-        border-radius: 18px;
-        position: relative;
-        margin: 0;
-        white-space: nowrap;
-        min-width: 0;
-        text-transform: none;
-        font-family: "Roboto", "Arial", sans-serif;
-        font-size: 14px;
-        line-height: 18px;
-        border: none;
-        cursor: pointer;
-        font-family: "Roboto", "Arial", sans-serif;
-        font-weight: 500;
-      }.chrome-download-button:hover {
-        background-color: lightgray;
-      }
 
-      .static-search-box {
-        display: block;
-        font-family: Roboto, Arial, sans-serif;
-      }.static-content-container {
-        width: 300px;
-        display: inline-block;
-        vertical-align: top;
-        cursor: pointer;
-        font-family: Roboto, Arial, sans-serif;
-      }.static-video-thumbnail {
-        width: 300px;
-        margin-bottom: 0;
-      }#static-top-small-title {
-        font-size: 12px;
-        padding-top: 5px;
-        margin-top: 0;
-        margin-bottom: 0;
-      }.static-video-title {
-        font-family: Roboto, Arial, sans-serif;
-        color: rgb(15, 15, 15);
-        font-weight: 550;
-        cursor: pointer;
-        width: 300px;
-        margin-top: 0;
-        margin-bottom: 0;
-        padding-top: 5px;
-        /* overflow: hidden;
-        display: block;
-        display: box;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        text-overflow: ellipsis;
-        white-space: normal; */
-      }.static-video-author {
-        margin-top: 0;
-        margin-bottom: 0;
-        padding-top: 6px;
-        padding-bottom: 1px;
-      }.static-video-stats {
-        padding-top: 1px;
-        margin-top: 0;
-      }
-    </style>
-  </head>
-  <body>
-    <input class="static-search-box" 
-    type="text" 
-    placeholder="Search" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YT.Static.Clone</title>
+  <style>
+    /*--Extra's-----------------------------------------*/
+    .tooltip {
+      position: relative;
+      display: inline-block;
+    }
+    .tooltip .tooltip-name {
+      visibility: hidden;
+      width: 120px;
+      background-color: #606060;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 10px 0;
+      position: absolute;
+      bottom: 150%;
+      left: 50%;
+      margin-left: -66px;
+      /* opacity: 0; */
+    }
+    .tooltip:hover .tooltip-name {
+      visibility: visible;
+      opacity: 0.9;
+      color: white;
 
-    <!--First content/video Chrome sponsor-->
-    <div class="static-content-container">
-      <img class="static-video-thumbnail" src="thumbnails/google-chrome-sponsor-thumbnail.webp" />
-      <p id="chrome-sponsor-title">
-        Download Chrome to help spot malware while you surf.
-      </p>
-      <p id="chrome-sec-title">
-        <strong>Sponsored &#183;</strong> Google Chrome
-      </p>
-      <button type="button" class="chrome-download-button">Download ↗</button>
-    </div>
-    <!--First content/video Chrome sponsor-->
+    }
+    .tooltip .tooltip-title {
+      visibility: hidden;
+      width: 500px;
+      background-color: #ffffff;
+      color: #606060;
+      text-align: center;
+      border-bottom: 2.75px solid #000000;
+      border-left: 2.75px solid #000000;
+      border-right: 2.75px solid #000000;
+      border-top: 2.75px solid #000000;
+      padding: 5px 0;
+      position: absolute;
+      z-index: 1;
+      font-size: 18px;
+      transition-delay: .5s;
+    }
+    .tooltip:hover .tooltip-title {
+      visibility: visible;
+    }
+    .tooltip .tooltip-name {
+      position: relative;
+      visibility: hidden;
+      width: 120px;
+      background-color: #606060;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 10px 0;
+      position: absolute;
+      bottom: 150%;
+      left: 50%;
+      margin-left: -66px;
+      z-index: 1002;
+      opacity: 0;
+    }
+    .tooltip:hover .tooltip-name {
+      visibility: visible;
+      opacity: 0.9;
+      color: white;
+    }
+    .tooltip .tooltip-title {
+      visibility: hidden;
+      width: 500px;
+      background-color: #ffffff;
+      color: #606060;
+      text-align: center;
+      border-bottom: 2.75px solid #000000;
+      border-left: 2.75px solid #000000;
+      border-right: 2.75px solid #000000;
+      border-top: 2.75px solid #000000;
+      padding: 5px 0;
+      position: absolute;
+      z-index: 1;
+      font-size: 18px;
+      transition-delay: .5s;
+    }
+    .tooltip:hover .tooltip-title {
+      visibility: visible;
+    }
+    .tooltip .tooltip-verified {
+      position: relative;
+      visibility: hidden;
+      width: 120px;
+      background-color: #606060;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 10px 0;
+      position: absolute;
+      bottom: 150%;
+      left: 50%;
+      margin-left: -66px;
+      z-index: 1002;
+      opacity: 0;
+    }
+    .tooltip:hover .tooltip-name {
+      visibility: visible;
+      opacity: 0.9;
+      color: white;
+    }
+    #chrome-sponsor-title {
+      align-items: center;
+      justify-content: space-between;
+      font-family: "Roboto", "Arial", sans-serif;
+      font-weight: 550;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-top: 5px;
+      cursor: pointer;
+      color: rgb(15, 15, 15);
+      font-family: Roboto, Arial, sans-serif;
+      width: 300px;
+    }
+     #chrome-sec-title {
+      width: 300px;
+      font-size: 14.5px;
+      margin-top: 0;
+      padding-top: 8px;
+      margin-bottom: 0;
+      font-family: Roboto, Arial, sans-serif;
+    }
+    .chrome-download-button {
+      color: #065fd4;
+      background-color: #def1ff;
+      padding: 0 16px;
+      height: 36px;
+      width: 300px;
+      font-size: 14px;
+      line-height: 36px;
+      border-radius: 18px;
+      position: relative;
+      margin: 0;
+      white-space: nowrap;
+      min-width: 0;
+      text-transform: none;
+      font-family: "Roboto", "Arial", sans-serif;
+      font-size: 14px;
+      line-height: 18px;
+      border: none;
+      cursor: pointer;
+      font-family: "Roboto", "Arial", sans-serif;
+      font-weight: 500;
+    }
+    .chrome-download-button:hover {
+      background-color: lightgray;
+    }
+    #static-top-small-title {
+      font-size: 12px;
+      padding-top: 5px;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+   /*--------------------------------------------------*/
 
-    <div class="static-content-container">
-      <img class="static-video-thumbnail" src="thumbnails/hacking-google-thumbnail.webp" />
-      <p class="static-video-title">
-        Operation Aurora | HACKING GOOGLE | Documentary EP000
-      </p>
-      <p class="static-video-author">
-        Google
-        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" focusable="false"
-          style="pointer-events: none; width: 4.5%; height: 4.5%; vertical-align: middle; display: inline-block; fill: rgb(92, 92, 92);">
-          <path
-            d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zM9.8 17.3l-4.2-4.1L7 11.8l2.8 2.7L17 7.4l1.4 1.4-8.6 8.5z">
-          </path>
-        </svg>
-      </p>
-      <p class="static-video-stats">5.8M views • 1 year ago</p>
-    </div>
+    .static-search-box {
+      display: block;
+      font-family: Roboto, Arial, sans-serif;
+    }
 
-    <div class="static-content-container">
+    .static-content-container {
+      width: 310.484px;
+      display: inline-block;
+      vertical-align: top;
+      cursor: pointer;
+      font-family: Roboto, Arial, sans-serif;
+      margin-right: 6px;
+      margin-left: 6px;
+    }
+
+    .static-video-thumbnail {
+      width: 310.484px;
+      height: 174.641px;
+      margin-bottom: 0;
+      border-radius: 12px;
+      min-width: 1px;
+      min-height: 1px;
+      text-size-adjust: 100%;
+      border-image-width: 1;
+      border-top-color: rgb(15, 15, 15);
+      border-bottom-color: rgb(15, 15, 15);
+      border-right-color: rgb(15, 15, 15);
+      border-left-color: rgb(15, 15, 15);
+      background-size: auto;
+      background-repeat: repeat;
+      border-image-repeat: stretch;
+      object-fit: cover;
+      overflow-clip-margin: content-box;
+    }.static-video-thumbnail:hover {
+      border-radius: 0px;
+    }
+
+    .channel-icon {
+      display: inline-block;
+      width: 50px;
+      vertical-align: top;
+    }
+    .channel-img {
+      width: 100%;
+    }
+    .content-details {
+      display: inline-block;
+      width: 200px;
+    }.static-video-title {
+      font-family: Roboto, Arial, sans-serif;
+      color: rgb(15, 15, 15);
+      font-weight: 550;
+      cursor: pointer;
+     
+      display: inline-block;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-top: 5px;
+    }.static-video-author {
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-top: 6px;
+      padding-bottom: 1px;
+      color: #606060
+    }.static-video-stats {
+      padding-top: 1px;
+      margin-top: 0;
+      color: #606060
+    }
+  </style>
+</head>
+
+<body>
+  <input class="static-search-box" type="text" placeholder="Search" />
+
+  <!--First content/video Chrome sponsor-->
+  <div class="static-content-container">
+    <img class="static-video-thumbnail" src="thumbnails/google-chrome-sponsor-thumbnail.webp" />
+    <p id="chrome-sponsor-title" class="tooltip">
+      Download Chrome to help spot malware while you surf.
+      <span class="tooltip-title">Download Chrome to help spot malware while you surf.</span>
+    </p>
+    <p id="chrome-sec-title" class="tooltip">
+      <strong>Sponsored &#183;</strong> Google Chrome
+      <span class="tooltip-name">Google Chrome</span>
+    </p>
+    <button type="button" class="chrome-download-button">Download ↗</button>
+  </div>
+  <!--First content/video Chrome sponsor-->
+
+  <div class="static-content-container">
+    <img class="static-video-thumbnail" src="thumbnails/hacking-google-thumbnail.webp" />
+    <p class="static-video-title tooltip">
+      Operation Aurora | HACKING GOOGLE | Documentary EP000
+      <span class="tooltip-title" style="width: 550px;">Operation Aurora | HACKING GOOGLE | Documentary EP000</span>
+    </p>
+    <p class="static-video-author tooltip">
+      Google
+      <span class="tooltip-name">Google</span>
+      <svg xmlns="http://www.w3.org/2000/svg" height="255" viewBox="0 0 24 24" width="250" focusable="false"
+        style="pointer-events: none; width: 4.5%; height: 4.5%; vertical-align: middle; display: inline-block; fill: rgb(92, 92, 92);">
+        <path
+          d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zM9.8 17.3l-4.2-4.1L7 11.8l2.8 2.7L17 7.4l1.4 1.4-8.6 8.5z">
+        </path>
+      </svg>
+    </p>
+    <p class="static-video-stats">5.8M views • 1 year ago</p>
+  </div>
+
+  <div class="static-content-container">
+    <div>
       <img class="static-video-thumbnail" src="thumbnails/cold-fusion-thumbnail.webp" />
-      <p class="static-video-title">AI Deception: How Tech Companies Are Fooling Us</p>
-      <p class="static-video-author">
-        ColdFusion
-        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" focusable="false"
-          style="pointer-events: none; width: 4.5%; height: 4.5%; vertical-align: middle; display: inline-block; fill: rgb(92, 92, 92);">
-          <path
-            d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zM9.8 17.3l-4.2-4.1L7 11.8l2.8 2.7L17 7.4l1.4 1.4-8.6 8.5z">
-          </path>
-        </svg>
-      </p>
-      <p class="static-video-stats">1.5M views • 1 month ago</p>
     </div>
-  
-    <div class="static-content-container">
-      <img class="static-video-thumbnail" src="thumbnails/vice-cyber-war-thumbnail.webp" />
-      <p class="static-video-title">Exposing the NSA’s Mass Surveillance of Americans | Cyberwar</p>
-      <p class="static-video-author">
-        Vice News
-        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" focusable="false"
-          style="pointer-events: none; width: 4.5%; height: 4.5%; vertical-align: middle; display: inline-block; fill: rgb(92, 92, 92);">
-          <path
-            d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zM9.8 17.3l-4.2-4.1L7 11.8l2.8 2.7L17 7.4l1.4 1.4-8.6 8.5z">
-          </path>
-        </svg>
-      </p>
-      <p class="static-video-stats">2.2M views • 1 month ago</p>
+    <div>
+      <div class="channel-icon">
+        <img class="channel-img" src="icons/cold-fusion-icon.jpg">
+      </div>
+      <div class="content-details">
+        <p class="static-video-title tooltip">AI Deception: How Tech Companies Are Fooling Us
+          <span class="tooltip-title">AI Deception: How Tech Companies Are Fooling Us</span>
+        </p>
+        <p class="static-video-author tooltip">
+          ColdFusion
+          <span class="tooltip-name">ColdFusion</span>
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" focusable="false"
+            style="width: 4.5%; height: 4.5%; vertical-align: middle; display: inline-block; fill: rgb(92, 92, 92);">
+            <path
+              d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zM9.8 17.3l-4.2-4.1L7 11.8l2.8 2.7L17 7.4l1.4 1.4-8.6 8.5z">
+            </path>
+          </svg>
+        </p>
+        <p class="static-video-stats">1.5M views • 1 month ago</p>
+      </div>
     </div>
+  </div>
 
-    <div class="static-content-container">
-      <img class="static-video-thumbnail" src="thumbnails/harvard-professor-wired-thumbnails.webp" />
-      <p id="static-top-small-title">5 LEVELS  S1 E2</p>
-      <p class="static-video-title">Harvard Professor Explains Algorithms in 5 Levels of Difficulty | WIRED</p>
-      <p class="static-video-author">
-        WIRED
-        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" focusable="false"
-          style="pointer-events: none; width: 4.5%; height: 4.5%; vertical-align: middle; display: inline-block; fill: rgb(92, 92, 92);">
-          <path
-            d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zM9.8 17.3l-4.2-4.1L7 11.8l2.8 2.7L17 7.4l1.4 1.4-8.6 8.5z">
-          </path>
-        </svg>
-      </p>
-      <p class="static-video-stats">2.4M views • 6 months ago</p>
-    </div>
+  <div class="static-content-container">
+    <img class="static-video-thumbnail" src="thumbnails/vice-cyber-war-thumbnail.webp" />
+    <p class="static-video-title tooltip">Exposing the NSA’s Mass Surveillance of Americans | Cyberwar</p>
+    <p class="static-video-author">
+      Vice News
+      <!-- <span class="tooltip-name">Vice News</span> -->
+      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" focusable="false"
+        style="pointer-events: none; width: 4.5%; height: 4.5%; vertical-align: middle; display: inline-block; fill: rgb(92, 92, 92);">
+        <path
+          d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zM9.8 17.3l-4.2-4.1L7 11.8l2.8 2.7L17 7.4l1.4 1.4-8.6 8.5z">
+        </path>
+      </svg>
+    </p>
+    <p class="static-video-stats">2.2M views • 1 month ago</p>
+  </div>
 
-    <div class="static-content-container">
-      <img class="static-video-thumbnail" src="thumbnails/wpt-live-thumbnail.webp" />
-      <p class="static-video-title">World Poker Tour 24/7 Episodes Stream</p>
-      <p class="static-video-author">
-        World Poker Tour
-        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" focusable="false"
-          style="pointer-events: none; width: 4.5%; height: 4.5%; vertical-align: middle; display: inline-block; fill: rgb(92, 92, 92);">
-          <path
-            d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zM9.8 17.3l-4.2-4.1L7 11.8l2.8 2.7L17 7.4l1.4 1.4-8.6 8.5z">
-          </path>
-        </svg>
-      </p>
-      <p class="static-video-stats">130 watching</p>
-    </div>
+  <div class="static-content-container">
+    <img class="static-video-thumbnail" src="thumbnails/harvard-professor-wired-thumbnails.webp" />
+    <p id="static-top-small-title">5 LEVELS S1 E2</p>
+    <p class="static-video-title tooltip">Harvard Professor Explains Algorithms in 5 Levels of Difficulty | WIRED</p>
+    <p class="static-video-author">
+      WIRED
+      <!-- <span class="tooltip-name">WIRED</span> -->
+      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" focusable="false"
+        style="pointer-events: none; width: 4.5%; height: 4.5%; vertical-align: middle; display: inline-block; fill: rgb(92, 92, 92);">
+        <path
+          d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zM9.8 17.3l-4.2-4.1L7 11.8l2.8 2.7L17 7.4l1.4 1.4-8.6 8.5z">
+        </path>
+      </svg>
+    </p>
+    <p class="static-video-stats">2.4M views • 6 months ago</p>
+  </div>
+
+  <div class="static-content-container">
+    <img class="static-video-thumbnail" src="thumbnails/wpt-live-thumbnail.webp" />
+    <p class="static-video-title tooltip">World Poker Tour 24/7 Episodes Stream</p>
+    <p class="static-video-author">
+      World Poker Tour
+      <!-- <span class="tooltip-name">World Poker Tour</span> -->
+      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" focusable="false"
+        style="pointer-events: none; width: 4.5%; height: 4.5%; vertical-align: middle; display: inline-block; fill: rgb(92, 92, 92);">
+        <path
+          d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zM9.8 17.3l-4.2-4.1L7 11.8l2.8 2.7L17 7.4l1.4 1.4-8.6 8.5z">
+        </path>
+      </svg>
+    </p>
+    <p class="static-video-stats">130 watching</p>
+  </div>
 
 
-  </body>
+</body>
+
 </html>

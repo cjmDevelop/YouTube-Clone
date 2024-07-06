@@ -54,22 +54,21 @@
         background-color: whitesmoke;
         color: black;
         font-size: 22px;
-
-        border-style: solid;
-        border-width: 5px 5px 5px 5px; /* top right bottom left */
-        border-color: #606060; /* sets the color for all four sides */
-        padding: 1px 0;
-
-        /* Position the tooltip */
+        font-family: 'Roboto', Arial, sans-serif;
+        font-weight: 400; 
+        font-style: normal; 
+        border: 2px solid #606060;
+        padding: 10px 7px;
         position: absolute;
         z-index: 1;
-        bottom: 150%;
+        top: 20px;
+        left: 25%;
+        /* bottom: 150%;
         left: 50%;
-        transform: translateX(-50%);
+        transform: translateX(-50%); */
       }
 
       .tooltip-name {
-        position: relative;
         visibility: hidden;
         width: auto;
         background-color: #606060;
@@ -86,7 +85,6 @@
       }
 
       .tooltip .tooltip-verified {
-        position: relative;
         visibility: hidden;
         width: auto;
         background-color: #606060;
@@ -324,7 +322,7 @@
             </p>
             <p class="channel-name tooltip">
               <strong>Sponsored &#183;</strong> Google Chrome
-              <span class="tooltip-name" style="margin-left: -97px;"> Google Chrome</span>
+              <span class="tooltip-name" style="margin-left: 40px;"> Google Chrome</span>
             </p>
           </div>
         </div>
@@ -707,12 +705,12 @@
         </div>
         <div class="inner-content-info-container">
           <p class="thumbnail-title tooltip">Back to the Future
-            <span class="tooltip-title" style="width: 200px; margin-left: -35px;">Back to the Future</span>
+            <span class="tooltip-title">Back to the Future</span>
           </p>
           <div>
             <p class="channel-name tooltip" style="margin-bottom: 2px;">
               Action & adventure • 1985
-              <span class="tooltip-name" style="width: 200px; margin-left: -97px;">Action & adventure • 1985</span>
+              <!-- <span class="tooltip-name" style="width: 200px; margin-left: -97px;">Action & adventure • 1985</span> -->
             </p>
           </div>
           <div>

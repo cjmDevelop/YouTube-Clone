@@ -1,4 +1,199 @@
-.static-search-box {
-    display: block;
-    font-family: Roboto, Arial, sans-serif;
-  }
+.header {
+  height: 55px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/*---------------------------------------------*/
+.left-section {
+  width: auto;
+}
+
+yt-icon-button.ytd-masthead {
+  --yt-icon-button-icon-width: 24px;
+  --yt-icon-button-icon-height: 24px;
+  color: var(--yt-spec-icon-active-other);
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  margin-right: 8px;
+  box-sizing: border-box;
+  border-radius: 40px;
+}
+
+yt-icon-button {
+  display: inline-block;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  box-sizing: border-box;
+  font-size: 0;
+  border-radius: 40px;
+}
+
+#guide-button.ytd-masthead {
+  margin: 0;
+  border-radius: 40px;
+
+}
+
+yt-icon.ytd-logo {
+  height: 20px;
+  width: 90px;
+  padding: 18px 14px 18px 16px;
+  color: var(--yt-spec-wordmark-text);
+  flex: none;
+  border-radius: 40px;
+}
+
+yt-icon,
+.yt-icon-container.yt-icon {
+  display: inline-flexbox;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  vertical-align: middle;
+  fill: var(--iron-icon-fill-color, currentcolor);
+  stroke: var(--iron-icon-stroke-color, none);
+  width: var(--iron-icon-width, 24px);
+  height: var(--iron-icon-height, 24px);
+  animation: var(--iron-icon-animation);
+  margin-top: var(--iron-icon-margin-top);
+  margin-right: var(--iron-icon-margin-right);
+  margin-bottom: var(--iron-icon-margin-bottom);
+  margin-left: var(--iron-icon-margin-left);
+  padding: var(--iron-icon-padding);
+  border-radius: 40px;
+}
+#guide-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  vertical-align: middle;
+  border-radius: 40px;
+  border-style:none;
+background-color: transparent;
+}
+#guide-button:hover {
+background-color: lightgray;
+
+}
+
+
+
+/*---------------------------------------------*/
+.middle-section {
+  flex: 1;
+  margin-left: 70px;
+  margin-right: 35px;
+  max-width: 500px;
+  width: auto;
+}
+
+.search-container {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  unicode-bidi: isolate;
+
+  height: 40px;
+  flex: 1;
+  flex-basis: 0.000000001px;
+  display: flex;
+  flex-direction: row;
+
+}
+
+.search-box {
+  width: auto;
+  max-width: 100%;
+  padding: 10px 40px 10px 20px;
+  font-size: 16px;
+  background-color: transparent;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-right: none;
+  border-radius: 40px 0 0 40px;
+  box-shadow: inset 0 1px 2px #eee;
+  /* caret-color: #0f0f0f; */
+  text-align: inherit;
+  -webkit-box-flex: 1;
+  flex: 1;
+  flex-basis: 0.000000001px;
+}
+
+
+.search-box:focus {
+
+  outline: none;
+  border-width: auto;
+
+
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+
+}
+
+.search-icon svg {
+  visibility: hidden;
+  fill: #888;
+  transition: fill 0.3s ease;
+
+}
+
+.search-box:focus+.search-icon svg {
+  visibility: visible;
+  fill: #333;
+
+}
+
+#search-icon-legacy {
+  /* appearance: auto; */
+  text-rendering: auto;
+  /* color: buttontext; */
+  letter-spacing: normal;
+  word-spacing: normal;
+  line-height: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: center;
+  align-items: flex-start;
+  /* cursor: default; */
+  /* box-sizing: border-box; */
+  /* background-color: buttonface; */
+  /* margin: 0em; */
+  padding-block: 1px;
+  padding-inline: 6px;
+  /* border-width: 2px;
+  border-style: outset;
+  border-color: buttonborder;
+  border-image: initial; */
+  border-radius: 0 40px 40px 0;
+background-color: transparent;
+  color: black;
+  border-bottom-color: rgb(204, 204, 204);
+  border-left-color:rgb(204, 204, 204) ;
+  border-right-color:rgb(204, 204, 204) ;
+  border-top-color: rgb(204, 204, 204);
+  border-image: initial;
+  border-width: 2px;
+  border-style: outset;
+}
+
+/*---------------------------------------------*/
+.right-section {
+  background-color: chartreuse;
+  width: 200px;
+}

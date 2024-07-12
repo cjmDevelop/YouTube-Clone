@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+input {
+  padding: 1px 0px;
+  border-style: 1px solid #ccc;   
+
+}
+
+  input[type=search]:focus {
+  align-items: center;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='55' height='55' viewBox='-12 -15 55 55' fill-rule='evenodd'%3E%3Cpath d='M16.036 18.455l2.404-2.405 5.586 5.587-2.404 2.404zM8.5 2C12.1 2 15 4.9 15 8.5S12.1 15 8.5 15 2 12.1 2 8.5 4.9 2 8.5 2zm0-2C3.8 0 0 3.8 0 8.5S3.8 17 8.5 17 17 13.2 17 8.5 13.2 0 8.5 0zM15 16a1 1 0 1 1 2 0 1 1 0 1 1-2 0'%3E%3C/path%3E%3C/svg%3E")  left / contain no-repeat;
+   flex: 1;
+   flex-basis: 0.000000001px;
+border-style: 1px solid #ccc;   
+}
+
+
+    </style>
+</head>
+<body>
+    <form>
+        <div style="display: flex;
+        position: relative;">
+          <input
+            type="search"
+            id="mySearch"
+            name="q"
+            placeholder="Search"
+            size="30" 
+            style="
+       
+            border-radius: 40px 0 0 40px;
+            padding: 0 4px 0 37px;
+            font-size: 16px;
+            margin-left: 32px;
+            align-items: center;
+            height: 40px;
+            font-family: 'Roboto', Noto, sans-serif;
+            font-weight: 400;
+            line-height: 24px;
+           " />
+            <button id="search-icon-legacy" 
+            style="
+            border-style: 1px solid #ccc;  
+            border-radius: 0px 40px 40px 0px; 
+            padding: 1px 6px;
+            /* border: 1px solid #ccc; */
+            cursor: pointer;
+            height: 40px;
+            width: 64px;
+            padding-block: 1px;
+            padding-inline: 6px;
+            " 
+            class="style-scope ytd-searchbox" aria-label="Search">
+                <yt-icon class="style-scope ytd-searchbox"><yt-icon-shape 
+                  class="style-scope yt-icon"><icon-shape class="yt-spec-icon-shape">
+                    <div style="width: 100%; height: 100%; display: inline-block; fill: currentcolor;">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="24" viewBox="2.5 -4 21 34" 
+                      width="24" focusable="false" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path clip-rule="evenodd" d="M16.296 16.996a8 8 0 11.707-.708l3.909 3.91-.707.707-3.909-3.909ZM18 11a7 7 0 11-14 0 7 7 0 0114 0Z" fill-rule="evenodd"></path></svg></div></icon-shape></yt-icon-shape></yt-icon>
+                <tp-yt-paper-tooltip prefix="" class="style-scope ytd-searchbox" role="tooltip" tabindex="-1" 
+                style="left: 1168.08px; top: 62px;">
+                <div id="tooltip" class="style-scope tp-yt-paper-tooltip hidden" style-target="tooltip">
+              </div>
+              </tp-yt-paper-tooltip>
+              </button>
+        </div>
+      </form>
+
+      
+</body>
+</html>

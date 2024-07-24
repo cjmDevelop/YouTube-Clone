@@ -92,7 +92,7 @@
               <yt-icon class="style-scope ytd-searchbox"><yt-icon-shape class="style-scope yt-icon"><icon-shape
                     class="yt-spec-icon-shape">
                     <div style="width: 100%; height: 100%; display: inline-block; fill: currentcolor;">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="24" viewBox="2.5 -4 21 34"
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="24" viewBox="2.5 -4 24 26"
                         width="24" focusable="false"
                         style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
                         <path clip-rule="evenodd"
@@ -109,15 +109,107 @@
             </button>
           </div>
         </form>
-      
     </div>
 
-
-    <!----------------------------------------------------------------------------------------------------------->
     <div class="right-section">
       right-section
     </div>
   </div>
+<!----------------------------------------------------------------------------------------------------------->
+
+  <div class="menu-container">
+    <button class="scroll-btn prev">&lt;</button>
+    <div class="scrollmenu">
+      <a href="#all" class="active">All</a>
+      <a href="#live">Live</a>
+      <a href="#texas-holdem">Texas hold 'em</a>
+      <a href="#music">Music</a>
+      <a href="#news">News</a>
+      <a href="#playlists">Playlists</a>
+      <a href="#security">Security</a>
+      <a href="#gaming">Gaming</a>
+      <a href="#thrillers">Thrillers</a>
+      <a href="#dancehall">Dancehall</a>
+      <a href="#mixes">Mixes</a>
+      <a href="#law-enforcement">Law enforcement</a>
+      <a href="#computers">Computers</a>
+      <a href="#superhero-movies">Superhero movies</a>
+      <a href="#smartphones">Smartphones</a>
+      <a href="#albums">Albums</a>
+      <a href="#comedy">Comedy</a>
+      <a href="#podcasts">Podcasts</a>
+      <a href="#musical-ensembles">Musical ensembles</a>
+      <a href="#recently-uploaded">Recently uploaded</a>
+      <a href="#new-to-you">New to you</a>
+    </div>
+    <button class="scroll-btn next">&gt;</button>
+  </div>
+  <script>
+    // Smooth scrolling function for previous and next buttons
+    document.querySelector('.prev').addEventListener('click', function () {
+      scrollMenuSmoothly(-200); // Adjust scroll amount as needed (negative value for left)
+    });
+  
+    document.querySelector('.next').addEventListener('click', function () {
+      scrollMenuSmoothly(200); // Adjust scroll amount as needed (positive value for right)
+    });
+  
+    function scrollMenuSmoothly(amount) {
+      const scrollMenu = document.querySelector('.scrollmenu');
+      const start = scrollMenu.scrollLeft;
+      const end = start + amount;
+      const duration = 500; // Adjust duration as needed
+  
+      let startTime = null;
+  
+      function step(timestamp) {
+        if (!startTime) startTime = timestamp;
+        const progress = timestamp - startTime;
+        scrollMenu.scrollLeft = easeInOutQuad(progress, start, amount, duration);
+  
+        if (progress < duration) {
+          requestAnimationFrame(step);
+        }
+      }
+  
+      requestAnimationFrame(step);
+    }
+  
+    // Easing function for smooth scroll animation
+    function easeInOutQuad(t, b, c, d = 500) {
+      t /= d / 2;
+      if (t < 1) return c / 2 * t * t + b;
+      t--;
+      return -c / 2 * (t * (t - 2) - 1) + b;
+    }
+  
+    // Handling click events on individual anchor links
+    const menuLinks = document.querySelectorAll('.scrollmenu a');
+  
+    menuLinks.forEach(link => {
+      link.addEventListener('click', function(event) {
+        event.preventDefault();
+  
+        // Remove active class from all links
+        menuLinks.forEach(link => {
+          link.classList.remove('active');
+        });
+  
+        // Add active class to the clicked link
+        this.classList.add('active');
+  
+        // Optional: Scroll to the clicked link if needed
+        this.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      });
+    });
+  
+    // Initialize by scrolling to the default selected link (optional)
+    const defaultSelectedLink = document.querySelector('.scrollmenu a.active');
+    if (defaultSelectedLink) {
+      defaultSelectedLink.scrollIntoView({ behavior: 'auto', block: 'nearest' });
+    }
+  </script>
+<!----------------------------------------------------------------------------------------------------------->
 
   <div class="top-level-main-grid-container">
     <div class="individual-content-container">

@@ -77,7 +77,7 @@
       background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='55' height='55' viewBox='-12 -15 55 55' fill-rule='evenodd'%3E%3Cpath d='M16.036 18.455l2.404-2.405 5.586 5.587-2.404 2.404zM8.5 2C12.1 2 15 4.9 15 8.5S12.1 15 8.5 15 2 12.1 2 8.5 4.9 2 8.5 2zm0-2C3.8 0 0 3.8 0 8.5S3.8 17 8.5 17 17 13.2 17 8.5 13.2 0 8.5 0zM15 16a1 1 0 1 1 2 0 1 1 0 1 1-2 0'%3E%3C/path%3E%3C/svg%3E") left / contain no-repeat;
       padding: 0 4px 0 37px;
       unicode-bidi: isolate;
-      
+
     }
 
     .search-button {
@@ -92,6 +92,72 @@
       padding-block: 1px;
       padding-inline: 6px;
 
+    }
+
+    .menu-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      overflow: hidden;
+      max-width: 100%;
+    }
+
+    .menu-container {
+      display: flex;
+      align-items: center;
+      justify-content:space-evenly;
+      overflow: hidden;
+      max-width: 100%;
+    }
+
+    .scrollmenu {
+      white-space: nowrap;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
+      padding: 10px 0;
+      flex-grow: 1;
+    }
+
+
+    .scrollmenu a {
+      display: inline-block;
+      padding: 8px 13px;
+      font-family: "Roboto", sans-serif;
+      font-size: 14px;
+      text-decoration: none;
+      color: #0f0f0f;
+      border: 1px solid transparent;
+      border-radius: 5px;
+      transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+    }
+
+    .scrollmenu a.active {
+    background-color: #000000;
+    color: #ffffff; 
+    border: none;
+}
+
+
+    .scrollmenu a:hover {
+      background-color: #d0d0d0;
+      color: #000000;
+    }
+
+
+    .scroll-btn {
+      background-color: #f1f1f1;
+      border-color: transparent;
+      color: #000000;
+      font-family: "Roboto", sans-serif;
+      font-size: 14px;
+      cursor: pointer;
+      padding: 8px;
+      transition: background-color 0.3s;
+    }
+
+    .scroll-btn:hover {
+      background-color: #ddd;
+      border-radius: 40px;
     }
   </style>
 </head>
@@ -123,6 +189,105 @@
       </div>
     </form>
   </header>
+
+
+  <div class="menu-container">
+    <button class="scroll-btn prev">&lt;</button>
+    <div class="scrollmenu">
+      <a href="#all" class="active">All</a>
+      <a href="#live">Live</a>
+      <a href="#texas-holdem">Texas hold 'em</a>
+      <a href="#music">Music</a>
+      <a href="#news">News</a>
+      <a href="#playlists">Playlists</a>
+      <a href="#security">Security</a>
+      <a href="#gaming">Gaming</a>
+      <a href="#thrillers">Thrillers</a>
+      <a href="#dancehall">Dancehall</a>
+      <a href="#mixes">Mixes</a>
+      <a href="#law-enforcement">Law enforcement</a>
+      <a href="#computers">Computers</a>
+      <a href="#superhero-movies">Superhero movies</a>
+      <a href="#smartphones">Smartphones</a>
+      <a href="#albums">Albums</a>
+      <a href="#comedy">Comedy</a>
+      <a href="#podcasts">Podcasts</a>
+      <a href="#musical-ensembles">Musical ensembles</a>
+      <a href="#recently-uploaded">Recently uploaded</a>
+      <a href="#new-to-you">New to you</a>
+    </div>
+    <button class="scroll-btn next">&gt;</button>
+  </div>
+
+
+<script>
+  // Smooth scrolling function for previous and next buttons
+  document.querySelector('.prev').addEventListener('click', function () {
+    scrollMenuSmoothly(-200); // Adjust scroll amount as needed (negative value for left)
+  });
+
+  document.querySelector('.next').addEventListener('click', function () {
+    scrollMenuSmoothly(200); // Adjust scroll amount as needed (positive value for right)
+  });
+
+  function scrollMenuSmoothly(amount) {
+    const scrollMenu = document.querySelector('.scrollmenu');
+    const start = scrollMenu.scrollLeft;
+    const end = start + amount;
+    const duration = 500; // Adjust duration as needed
+
+    let startTime = null;
+
+    function step(timestamp) {
+      if (!startTime) startTime = timestamp;
+      const progress = timestamp - startTime;
+      scrollMenu.scrollLeft = easeInOutQuad(progress, start, amount, duration);
+
+      if (progress < duration) {
+        requestAnimationFrame(step);
+      }
+    }
+
+    requestAnimationFrame(step);
+  }
+
+  // Easing function for smooth scroll animation
+  function easeInOutQuad(t, b, c, d = 500) {
+    t /= d / 2;
+    if (t < 1) return c / 2 * t * t + b;
+    t--;
+    return -c / 2 * (t * (t - 2) - 1) + b;
+  }
+
+  // Handling click events on individual anchor links
+  const menuLinks = document.querySelectorAll('.scrollmenu a');
+
+  menuLinks.forEach(link => {
+    link.addEventListener('click', function(event) {
+      event.preventDefault();
+
+      // Remove active class from all links
+      menuLinks.forEach(link => {
+        link.classList.remove('active');
+      });
+
+      // Add active class to the clicked link
+      this.classList.add('active');
+
+      // Optional: Scroll to the clicked link if needed
+      this.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+  });
+
+  // Initialize by scrolling to the default selected link (optional)
+  const defaultSelectedLink = document.querySelector('.scrollmenu a.active');
+  if (defaultSelectedLink) {
+    defaultSelectedLink.scrollIntoView({ behavior: 'auto', block: 'nearest' });
+  }
+</script>
+
+
+  
 
 </body>
 

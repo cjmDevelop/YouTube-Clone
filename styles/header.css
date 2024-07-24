@@ -146,10 +146,10 @@ input[type=text]:focus {
 
 .search-button {
   align-items: flex-start;
-  border-style: 1px solid #ccc;
+  /* border-style: 1px solid #ccc; */
   border-radius: 0px 40px 40px 0px;
   padding: 1px 6px;
-  border: 1px solid #ccc;
+  border: 1px solid #bfbfbf;
   cursor: pointer;
   height: 40px;
   width: 64px;

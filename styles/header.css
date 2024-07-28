@@ -1,15 +1,12 @@
 .header {
-  height: 55px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
-  display: block;
   height: 56px;
   display: flex;
   flex-direction: row;
-  padding: 0px 16px;
-  margin-bottom: 0%;
+  align-items:center;
+  justify-content: center;
+  justify-content:space-between;
+  margin: 0;
+  width: 100%;
 }
 
 canvas,
@@ -75,83 +72,85 @@ var {
 }
 
 /*---------------------------------------------*/
-.left-section {
-  width: auto;
-  margin: 0;
-}
 
-yt-icon-button.ytd-masthead {
-  --yt-icon-button-icon-width: 24px;
-  --yt-icon-button-icon-height: 24px;
+
+yt-icon-button.ytd-masthead { 
+  height: 24px;
+  width: 24px;
   color: var(--yt-spec-icon-active-other);
   width: 40px;
   height: 40px;
   padding: 8px;
-  margin-right: 8px;
+  margin-left: 8px;
   box-sizing: border-box;
   border-radius: 40px;
+  background-color: rgb(201, 6, 117);
+  color: rgb(33, 220, 20);
 }
 
 yt-icon-button {
-  display: inline-block;
+  display: flex;
+  align-self:start;
+  /* display: inline-block; */
   position: relative;
   width: 24px;
   height: 24px;
   box-sizing: border-box;
   font-size: 0;
   border-radius: 40px;
+  background-color: forestgreen;
 }
 
 #guide-button.ytd-masthead {
   margin: 0;
-  border-radius: 40px;
 
 }
 
 yt-icon.ytd-logo {
-  height: 20px;
+
   width: 90px;
   padding: 18px 14px 18px 16px;
-  color: var(--yt-spec-wordmark-text);
   flex: none;
   border-radius: 40px;
 }
 
 yt-icon,
 .yt-icon-container.yt-icon {
-  display: inline-flexbox;
+ 
   display: inline-flex;
-  align-items: center;
+ align-self: center;
   justify-content: center;
-  position: relative;
   vertical-align: middle;
-  fill: var(--iron-icon-fill-color, currentcolor);
-  stroke: var(--iron-icon-stroke-color, none);
-  width: var(--iron-icon-width, 24px);
-  height: var(--iron-icon-height, 24px);
-  animation: var(--iron-icon-animation);
-  margin-top: var(--iron-icon-margin-top);
-  margin-right: var(--iron-icon-margin-right);
-  /* margin-bottom: var(--iron-icon-margin-bottom); */
-  margin-left: var(--iron-icon-margin-left);
-  padding: var(--iron-icon-padding);
   border-radius: 40px;
 }
 
 #guide-button {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  position: relative;
+  justify-content:space-between;
+  /* position: relative; */
+  /* display: flex; */
+   /* align-self: center; justify-self: center; position: absolute; */
   vertical-align: middle;
+  justify-items: center;
   border-radius: 40px;
   border-style: none;
   background-color: transparent;
-  margin-right: 5px;
+  /* margin-right: 5px; */
+
+
+
+  color:rgb(0, 0, 0);
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+
+    box-sizing: border-box;
 }
 
 #guide-button:hover {
-  background-color: lightgray;
+  background-color: rgb(182, 17, 17);
+
 
 }
 

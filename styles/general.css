@@ -1,10 +1,10 @@
-.body {
+.body-main {
     margin: 0;
     padding: 0;
 
 }
 
-.sidenav {
+.sidenav-outer-menu {
     width: 65px;
     padding: 5px 5px 14px;
     display: flex;
@@ -15,7 +15,8 @@
 
   }
 
-  .sidenav a {
+  .sidenav-outer-menu a {
+    margin-top: 15px;
     padding: 6px 6px 6px 14px;
     text-decoration: none;
     font-family: "Roboto", Arial, sans-serif;
@@ -23,17 +24,22 @@
     color: #000;
     display: block;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: static;
+    display: block;
   }
 
-  .sidenav a:hover {
+  .sidenav-outer-menu a:hover {
   color: #852020;
   }
 
-  .sidenav svg {
+  .sidenav-outer-menu svg {
     margin-right: 2px;
   }
 
-  .menu-container {
+  .side-N-top-nav-menus {
     display: flex;
     align-items: center;
     justify-content: space-between;

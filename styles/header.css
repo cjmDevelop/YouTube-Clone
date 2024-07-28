@@ -3,15 +3,71 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width:100%;
+  width: 100%;
   display: block;
   height: 56px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   padding: 0px 16px;
+  margin-bottom: 0%;
 }
-canvas, caption, center, cite, code, dd, del, dfn, div, dl, dt, em, embed, fieldset, font, form, h1, h2, h3, h4, h5, h6, hr, i, iframe, img, ins, kbd, label, legend, li, menu, object, ol, p, pre, q, s, samp, small, span, strike, strong, sub, sup, table, tbody, td, tfoot, th, thead, tr, tt, u, ul, var {
+
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+dfn,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+font,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+menu,
+object,
+ol,
+p,
+pre,
+q,
+s,
+samp,
+small,
+span,
+strike,
+strong,
+sub,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr,
+tt,
+u,
+ul,
+var {
   margin: 0;
   padding: 0;
   border: 0;
@@ -39,9 +95,9 @@ yt-icon-button.ytd-masthead {
 yt-icon-button {
   display: inline-block;
   position: relative;
-  /* width: 24px;
+  width: 24px;
   height: 24px;
-  box-sizing: border-box; */
+  box-sizing: border-box;
   font-size: 0;
   border-radius: 40px;
 }
@@ -76,11 +132,12 @@ yt-icon,
   animation: var(--iron-icon-animation);
   margin-top: var(--iron-icon-margin-top);
   margin-right: var(--iron-icon-margin-right);
-  margin-bottom: var(--iron-icon-margin-bottom);
+  /* margin-bottom: var(--iron-icon-margin-bottom); */
   margin-left: var(--iron-icon-margin-left);
   padding: var(--iron-icon-padding);
   border-radius: 40px;
 }
+
 #guide-button {
   display: inline-flex;
   align-items: center;
@@ -88,11 +145,13 @@ yt-icon,
   position: relative;
   vertical-align: middle;
   border-radius: 40px;
-  border-style:none;
-background-color: transparent;
+  border-style: none;
+  background-color: transparent;
+  margin-right: 5px;
 }
+
 #guide-button:hover {
-background-color: lightgray;
+  background-color: lightgray;
 
 }
 
@@ -141,72 +200,214 @@ input[type=text]:focus {
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='55' height='55' viewBox='-12 -15 55 55' fill-rule='evenodd'%3E%3Cpath d='M16.036 18.455l2.404-2.405 5.586 5.587-2.404 2.404zM8.5 2C12.1 2 15 4.9 15 8.5S12.1 15 8.5 15 2 12.1 2 8.5 4.9 2 8.5 2zm0-2C3.8 0 0 3.8 0 8.5S3.8 17 8.5 17 17 13.2 17 8.5 13.2 0 8.5 0zM15 16a1 1 0 1 1 2 0 1 1 0 1 1-2 0'%3E%3C/path%3E%3C/svg%3E") left / contain no-repeat;
   padding: 0 4px 0 37px;
   unicode-bidi: isolate;
-  
+
 }
 
 .search-button {
   align-items: flex-start;
-  /* border-style: 1px solid #ccc; */
+  border-style: 1px solid #ccc;
   border-radius: 0px 40px 40px 0px;
   padding: 1px 6px;
   border: 1px solid #bfbfbf;
   cursor: pointer;
   height: 40px;
   width: 64px;
+  margin-right: 10px;
   padding-block: 1px;
   padding-inline: 6px;
-
 }
+
 #voice-search-svg {
   position: relative;
   width: 60%;
   height: 60%;
- }
+}
 
-  .voice-search-button {
-      position: relative;
-      display: inline-block;
-      background-color: rgba(0, 0, 0, 0.141);
-      color: #0f0f0f;
-      border: none;
-      cursor: pointer;
+.voice-search-button {
+  position: relative;
+  display: inline-block;
+  background-color: transparent;
+  color: #0f0f0f;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+  padding: 0;
+}
 
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      padding: 0;
-  }
+.voice-search-button:hover {
+  background-color: rgba(0, 0, 0, 0.141);
+}
 
-  .voice-search-button .voice-search-tooltip-text {
-      visibility: hidden;
-      font-size: 5px;
-      width: 121px;
-      background-color: #606060;
-      color: #fff;
-      text-align: center;
-      border-radius: 6px;
-      padding: 10px;
-      font-family: "Roboto", "Arial", sans-serif;
-      font-weight: 500;
-      position: absolute;
-      top: 145%;
-      left: 50%;
-      transform: translateX(-50%);
-      opacity: 0;
-      transition: opacity 0.7s;
-  }
+.voice-search-button .voice-search-tooltip-text {
+  visibility: hidden;
+  font-size: 12px;
+  width: 121px;
+  background-color: #606060;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 10px;
+  font-family: "Roboto", "Arial", sans-serif;
+  font-weight: 500;
+  position: absolute;
+  top: 145%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.7s;
+}
 
-  .voice-search-button:hover .voice-search-tooltip-text {
-      visibility: visible;
-      opacity: 0.9;
-  }
+.voice-search-button:hover .voice-search-tooltip-text {
+  visibility: visible;
+  opacity: 0.9;
+}
 
-  .voice-search-button:active {
-      background: rgba(0, 0, 0, 0.2);
-  }
+.voice-search-button:active {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+
+#search-icon-legacy .voice-search-tooltip-text {
+  visibility: hidden;
+  font-size: 12px;
+  width: auto;
+  background-color: #606060;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 10px;
+  font-family: "Roboto", "Arial", sans-serif;
+  font-weight: 500;
+  position: absolute;
+  top: 145%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.7s;
+}
+
+#search-icon-legacy:hover .voice-search-tooltip-text {
+  visibility: visible;
+  opacity: 0.9;
+}
+
 
 /*-----Right-Section---------------------------------------*/
 .right-section {
-  
+display: flex;
+justify-content: center;
+align-items: center;
   width: 200px;
+}
+element.style {
+  width: 100%;
+  height: 100%;
+  display: block;
+  fill: currentcolor;
+}
+canvas, caption, center, cite, code, dd, del, dfn, div, dl, dt, em, embed, fieldset, font, form, h1, h2, h3, h4, h5, h6, hr, i, iframe, img, ins, kbd, label, legend, li, menu, object, ol, p, pre, q, s, samp, small, span, strike, strong, sub, sup, table, tbody, td, tfoot, th, thead, tr, tt, u, ul, var {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+yt-icon, .yt-icon-container.yt-icon {
+  display: inline-flexbox;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  vertical-align: middle;
+
+}
+button.yt-icon-button {
+  vertical-align: middle;
+  color: inherit;
+  outline: none;
+  background: none;
+  margin: 0;
+  border: none;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  line-height: 0;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+ytd-topbar-menu-button-renderer #button.ytd-topbar-menu-button-renderer {
+  color: var(--yt-button-color, inherit);
+  background-color: transparent;
+  text-transform: var(--yt-button-text-transform, inherit);
+}
+#button.ytd-topbar-menu-button-renderer {
+  color: var(--yt-button-color);
+  background-color: var(--yt-button-background-color);
+}
+yt-icon-button.ytd-topbar-menu-button-renderer {
+  line-height: 1;
+  padding: var(--yt-button-icon-padding, 8px);
+  width: var(--yt-button-icon-size, var(--yt-icon-width, 40px));
+  height: var(--yt-button-icon-size, var(--yt-icon-height, 40px));
+}
+yt-icon-button.ytd-topbar-menu-button-renderer {
+  width: var(--yt-button-icon-size, 40px);
+  height: var(--yt-button-icon-size, 40px);
+  color: var(--yt-endpoint-color, var(--yt-deprecated-luna-black));
+}
+yt-icon-button {
+  display: inline-block;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  box-sizing: border-box;
+  font-size: 0;
+}
+
+
+yt-icon, .yt-icon-container.yt-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  vertical-align: middle;
+  fill: var(--iron-icon-fill-color, currentcolor);
+  stroke: var(--iron-icon-stroke-color, none);
+  width: var(--iron-icon-width, 24px);
+  height: var(--iron-icon-height, 24px);
+  animation: var(--iron-icon-animation);
+  margin-top: var(--iron-icon-margin-top);
+  margin-right: var(--iron-icon-margin-right);
+  /* margin-bottom: var(--iron-icon-margin-bottom); */
+  margin-left: var(--iron-icon-margin-left);
+  padding: var(--iron-icon-padding);
+}
+.yt-spec-icon-badge-shape__icon {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+.yt-spec-icon-badge-shape {
+  display: inline-block;
+  color: #030303;
+  position: relative;
+}
+button.yt-icon-button {
+  vertical-align: middle;
+  color: inherit;
+  outline: none;
+  background: none;
+  margin: 0;
+  border: none;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  line-height: 0;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
 }

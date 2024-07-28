@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="icons/yt-t-ic.png" />
-  <title>YouTube-Clone</title>
+  <title>YouTube~Clone</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -20,11 +20,9 @@
 
     <div class="left-section">
       <!--Hamburger Menu--------------------------------------------------------------------------------------------->
-      <yt-icon-button id="guide-button" toggleable="true" class="style-scope ytd-masthead"
-        role="button"><!--css-build:shady--><!--css-build:shady-->
+      <yt-icon-button id="guide-button" toggleable="true" class="style-scope ytd-masthead" role="button">
         <button id="guide-button" class="style-scope yt-icon-button" aria-label="Guide">
-          <yt-icon id="guide-icon" icon="yt-icons:menu"
-            class="style-scope ytd-masthead"><!--css-build:shady--><!--css-build:shady--><yt-icon-shape
+          <yt-icon id="guide-icon" icon="yt-icons:menu" class="style-scope ytd-masthead"><yt-icon-shape
               class="style-scope yt-icon"><icon-shape class="yt-spec-icon-shape">
                 <div style="width: 100%; height: 100%; display: inline-block; fill: currentcolor;">
                   <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" focusable="false"
@@ -34,15 +32,14 @@
                 </div>
 
               </icon-shape></yt-icon-shape></yt-icon>
-        </button><yt-interaction id="interaction"
-          class="circular style-scope yt-icon-button"><!--css-build:shady--><!--css-build:shady-->
+        </button><yt-interaction id="interaction" class="circular style-scope yt-icon-button">
           <div class="stroke style-scope yt-interaction"></div>
           <div class="fill style-scope yt-interaction"></div>
         </yt-interaction></yt-icon-button>
 
       <!--YouTube Logo-------------------------------------------------------------------------------------------------------------------------------->
-      <yt-icon id="logo-icon" class="style-scope ytd-logo"><yt-icon-shape
-          class="style-scope yt-icon"><icon-shape class="yt-spec-icon-shape">
+      <yt-icon id="logo-icon" class="style-scope ytd-logo"><yt-icon-shape class="style-scope yt-icon"><icon-shape
+            class="yt-spec-icon-shape">
             <div style="width: 100%; height: 100%; display: inline-block; fill: currentcolor;"><svg
                 xmlns="http://www.w3.org/2000/svg" id="yt-logo-updated-svg_yt8" class="external-icon"
                 viewBox="0 0 90 20" focusable="false"
@@ -82,60 +79,146 @@
               </svg></div>
           </icon-shape></yt-icon-shape></yt-icon>
     </div>
-<!---------------------------------------------------------->
+    <!---------------------------------------------------------->
     <div class="middle-section">
-   
-        <form>
-          <div id="search">
-            <input type="text" name="q" placeholder="Search" size="55" />
-            <button id="search-icon-legacy" class="search-button" aria-label="Search">
-              <yt-icon class="style-scope ytd-searchbox"><yt-icon-shape class="style-scope yt-icon"><icon-shape
-                    class="yt-spec-icon-shape">
-                    <div style="width: 100%; height: 100%; display: inline-block; fill: currentcolor;">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="24" viewBox="2.5 -4 24 26"
-                        width="24" focusable="false"
-                        style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
-                        <path clip-rule="evenodd"
-                          d="M16.296 16.996a8 8 0 11.707-.708l3.909 3.91-.707.707-3.909-3.909ZM18 11a7 7 0 11-14 0 7 7 0 0114 0Z"
-                          fill-rule="evenodd"></path>
-                      </svg>
-                    </div>
-                  </icon-shape></yt-icon-shape></yt-icon>
-              <tp-yt-paper-tooltip prefix="" class="style-scope ytd-searchbox" role="tooltip" tabindex="-1"
-                style="left: 1168.08px; top: 62px;">
-                <div id="tooltip" class="style-scope tp-yt-paper-tooltip hidden" style-target="tooltip">
-                </div>
-              </tp-yt-paper-tooltip>
-            </button>
-          </div>
-       
-       
-          <button class="voice-search-button">
-              <div>
-                  <svg id="voice-search-svg" xmlns="http://www.w3.org/2000/svg" height="100" viewBox="0 0 24 24" width="100">
-                      <path d="M12 3c-1.66 0-3 1.37-3 3.07v5.86c0 
+
+      <form>
+        <div id="search">
+          <input type="text" name="q" placeholder="Search" size="55" />
+          <button id="search-icon-legacy" class="search-button" aria-label="Search">
+            <yt-icon class="style-scope ytd-searchbox">
+              <yt-icon-shape class="style-scope yt-icon">
+                <icon-shape class="yt-spec-icon-shape">
+                  <div style="width: 100%; height: 100%; display: inline-block; fill: currentcolor;">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="24" viewBox="0 0 24 24"
+                      width="24" focusable="false"
+                      style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+                      <path clip-rule="evenodd"
+                        d="M16.296 16.996a8 8 0 11.707-.708l3.909 3.91-.707.707-3.909-3.909ZM18 11a7 7 0 11-14 0 7 7 0 0114 0Z"
+                        fill-rule="evenodd">
+                      </path>
+                    </svg>
+                  </div>
+                </icon-shape>
+              </yt-icon-shape>
+            </yt-icon>
+            <p><span class="voice-search-tooltip-text">Search</span></p>
+          </button>
+        </div>
+
+
+        <button class="voice-search-button">
+          <div>
+            <svg id="voice-search-svg" xmlns="http://www.w3.org/2000/svg" height="100" viewBox="0 0 24 24" width="100">
+              <path d="M12 3c-1.66 0-3 1.37-3 3.07v5.86c0 
                       1.7 1.34 3.07 3 3.07s3-1.37 3-3.07V6.07C15 
                       4.37 13.66 3 12 3zm6.5 9h-1c0 3.03-2.47 
                       5.5-5.5 5.5S6.5 15.03 6.5 12h-1c0 3.24 
                       2.39 5.93 5.5 6.41V21h2v-2.59c3.11-.48 
                       5.5-3.17 5.5-6.41z">
-                      </path>
-                  </svg>
-              </div>
-              <p><span class="voice-search-tooltip-text">Search with your voice</span></p>
-          </button>
-        </form>
+              </path>
+            </svg>
+          </div>
+          <p><span class="voice-search-tooltip-text">Search with your voice</span></p>
+        </button>
+      </form>
     </div>
 
+
+    <!--------Right-Section----------------------------------------------------------------------------------------------->
     <div class="right-section">
-      right-section
-    </div>
+      <yt-icon-button id="button" class="style-scope ytd-topbar-menu-button-renderer style-default"
+        role="button"><!--css-build:shady--><!--css-build:shady--><button id="button" class="style-scope yt-icon-button"
+          aria-label="Create"><yt-icon
+            class="style-scope ytd-topbar-menu-button-renderer"><!--css-build:shady--><!--css-build:shady--><span
+              class="yt-icon-shape yt-spec-icon-shape">
+              <div style="width: 100%; height: 100%; display: block; fill: currentcolor;"><svg
+                  xmlns="http://www.w3.org/2000/svg" height="24"
+                  style="pointer-events: none; display: inherit; width: 100%; height: 100%;" viewBox="0 0 24 24" width="24"
+                  focusable="false" aria-hidden="true">
+                  <path
+                    d="M14 13h-3v3H9v-3H6v-2h3V8h2v3h3v2zm3-7H3v12h14v-6.39l4 1.83V8.56l-4 1.83V6m1-1v3.83L22 7v8l-4-1.83V19H2V5h16z">
+                  </path>
+                </svg></div>
+            </span></yt-icon></button><yt-interaction id="interaction"
+          class="circular style-scope yt-icon-button"><!--css-build:shady--><!--css-build:shady-->
+          <div class="stroke style-scope yt-interaction"></div>
+          <div class="fill style-scope yt-interaction"></div>
+        </yt-interaction></yt-icon-button>
+  
+        <button id="button" class="style-scope yt-icon-button" aria-label="Notifications">
+          <yt-icon-badge-shape>
+            <div class="yt-spec-icon-badge-shape yt-spec-icon-badge-shape--type-notification">
+              <div class="yt-spec-icon-badge-shape__icon"><yt-icon style=""><!--css-build:shady--><!--css-build:shady--><span
+                    class="yt-icon-shape yt-spec-icon-shape">
+                    <div style="width: 100%; height: 100%; display: block; fill: currentcolor;"><svg
+                        xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24"
+                        width="24" focusable="false" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"
+                        aria-hidden="true">
+                        <path
+                          d="M10 20h4c0 1.1-.9 2-2 2s-2-.9-2-2zm10-2.65V19H4v-1.65l2-1.88v-5.15C6 7.4 7.56 5.1 10 4.34v-.38c0-1.42 1.49-2.5 2.99-1.76.65.32 1.01 1.03 1.01 1.76v.39c2.44.75 4 3.06 4 5.98v5.15l2 1.87zm-1 .42-2-1.88v-5.47c0-2.47-1.19-4.36-3.13-5.1-1.26-.53-2.64-.5-3.84.03C8.15 6.11 7 7.99 7 10.42v5.47l-2 1.88V18h14v-.23z">
+                        </path>
+                      </svg></div>
+                  </span></yt-icon></div>
+            </div>
+          </yt-icon-badge-shape>
+        </button>
   </div>
-<!----------------------------------------------------------------------------------------------------------->
+</div>
 
+  <!----------------------------------------------------------------------------------------------------------->
+
+<div class="main-contain-frame" style=" position: relative;
+  top: 0;">
   <div class="menu-container">
+    <div class="sidenav">
+      <a href="#">
+        <div style="width: 100%; height: 100%; display: block; fill: currentcolor;"><svg
+            xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24"
+            width="24" focusable="false" aria-hidden="true">
+            <g>
+              <path d="M4 21V10.08l8-6.96 8 6.96V21h-6v-6h-4v6H4z"></path>
+            </g>
+          </svg>
+          <p><span>Home</span></p>
+        </div>
+      </a>
+      <a href="#">
+        <div style="width: 100%; height: 100%; display: block; fill: currentcolor;"><svg
+            xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" focusable="false"
+            aria-hidden="true">
+            <path
+              d="M10 14.65v-5.3L15 12l-5 2.65zm7.77-4.33-1.2-.5L18 9.06c1.84-.96 2.53-3.23 1.56-5.06s-3.24-2.53-5.07-1.56L6 6.94c-1.29.68-2.07 2.04-2 3.49.07 1.42.93 2.67 2.22 3.25.03.01 1.2.5 1.2.5L6 14.93c-1.83.97-2.53 3.24-1.56 5.07.97 1.83 3.24 2.53 5.07 1.56l8.5-4.5c1.29-.68 2.06-2.04 1.99-3.49-.07-1.42-.94-2.68-2.23-3.25zm-.23 5.86-8.5 4.5c-1.34.71-3.01.2-3.72-1.14-.71-1.34-.2-3.01 1.14-3.72l2.04-1.08v-1.21l-.69-.28-1.11-.46c-.99-.41-1.65-1.35-1.7-2.41-.05-1.06.52-2.06 1.46-2.56l8.5-4.5c1.34-.71 3.01-.2 3.72 1.14.71 1.34.2 3.01-1.14 3.72L15.5 9.26v1.21l1.8.74c.99.41 1.65 1.35 1.7 2.41.05 1.06-.52 2.06-1.46 2.56z">
+            </path>
+          </svg>
+        </div>
+        <p>Shorts</p>
+      </a>
+      <a href="#" style="text-align:center">
+        <div style="width: 100%; height: 100%; display: block; fill: currentcolor;"><svg
+            xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24"
+            width="24" focusable="false" aria-hidden="true">
+            <path d="M10 18v-6l5 3-5 3zm7-15H7v1h10V3zm3 3H4v1h16V6zm2 3H2v12h20V9zM3 10h18v10H3V10z">
+            </path>
+          </svg>
+        </div>
+        <p>Subscriptions</p>
+      </a>
+      <a href="#" style="text-align: center;">
+        <div style="width: 100%; height: 100%; display: block; fill: currentcolor;"><svg
+            xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24"
+            width="24" focusable="false" aria-hidden="true">
+            <path d="m11 7 6 3.5-6 3.5V7zm7 13H4V6H3v15h15v-1zm3-2H6V3h15v15zM7 17h13V4H7v13z">
+            </path>
+          </svg>
+        </div>
+        <p><span>You</span></p>
+      </a>
+    </div>
+  
+  <div style="display: flex; justify-content: flex-start; align-self: first baseline;">
     <button class="scroll-btn prev">&lt;</button>
-    <div class="scrollmenu">
+    <div class="scrollmenu" style="display: flex; position:initial;">
       <a href="#all" class="active">All</a>
       <a href="#live">Live</a>
       <a href="#texas-holdem">Texas hold 'em</a>
@@ -203,7 +286,7 @@
     const menuLinks = document.querySelectorAll('.scrollmenu a');
   
     menuLinks.forEach(link => {
-      link.addEventListener('click', function(event) {
+      link.addEventListener('click', function (event) {
         event.preventDefault();
   
         // Remove active class from all links
@@ -225,9 +308,10 @@
       defaultSelectedLink.scrollIntoView({ behavior: 'auto', block: 'nearest' });
     }
   </script>
-<!----------------------------------------------------------------------------------------------------------->
-
-  <div class="top-level-main-grid-container">
+  
+  </div>
+  
+  <div class="top-level-main-grid-container" style="display:grid">
     <div class="individual-content-container">
       <div class="thumbnail-row">
         <img class="thumbnail" src="thumbnails/google-chrome-sponsor-thumbnail.webp" />
@@ -931,6 +1015,7 @@
       </div>
     </div>
   </div>
+
 </body>
 
 </html>

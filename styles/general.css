@@ -1,102 +1,132 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 1905px;
+  height: 0px;
+}
+html, body {
+
+* {
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+}
+
+img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+object-fit: contain;
+}
 .body-main {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 
 }
 
 .sidenav-outer-menu {
-    width: 65px;
-    padding: 5px 5px 14px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%; /* Full height */
-    justify-content: center;
+  background-color: rgb(255, 255, 255);
+  position: fixed;
+  z-index: 1;
+  top: 56px;
+  left: 0;
+  text-align: center;
+  height: calc(100% - 56px);
+  /* Adjust according to your header height */
+  overflow-y: auto;
+  /* Add scroll if content overflows */
+z-index: 3;
+}
 
-  }
+.sidenav-outer-menu a {
 
-  .sidenav-outer-menu a {
-    margin-top: 15px;
-    padding: 6px 6px 6px 14px;
-    text-decoration: none;
-    font-family: "Roboto", Arial, sans-serif;
-    font-size: 10px;
-    color: #000;
-    display: block;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    position: static;
-    display: block;
-  }
+  width: 72px;
+  padding: 35px 6px 6px 6px;
+  text-decoration: none;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 10px;
+  color: #000;
+  display: block;
 
-  .sidenav-outer-menu a:hover {
+
+
+}
+
+.sidenav-outer-menu a:hover {
   color: #852020;
-  }
+}
 
-  .sidenav-outer-menu svg {
-    margin-right: 2px;
-  }
+.sidenav-outer-menu svg {
+  margin-right: 2px;
+}
 
-  .side-N-top-nav-menus {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    overflow: hidden;
-    max-width: 100%;
-    margin-bottom: 35px;
-  }
-
-
-
-  .scrollmenu {
-    white-space: nowrap;
-    overflow-x: hidden;
-    -webkit-overflow-scrolling: touch;
-    padding: 10px 0;
-    flex-grow: 1;
-  }
+.side-N-top-nav-menus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  max-width: 100%;
+  margin-bottom: 35px;
+}
 
 
-  .scrollmenu a {
-    display: inline-block;
-    padding: 8px 13px;
-    font-family: "Roboto", sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    text-decoration: none;
-    color: #0f0f0f;
-    border: 1px solid transparent;
-    border-radius: 5px;
-    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
-  }
+.scrollmenu {
+  position: fixed;
+  top: 56px; /* Adjust based on the height of your header */
+  white-space: nowrap;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  padding: 20px 75px; /* Adjust padding as needed */
+  background-color:rgb(255, 255, 255); /* Ensure it has a background color */
+z-index:2;
+}
 
-  .scrollmenu a.active {
+.scrollmenu a {
+  display: inline-block;
+  padding: 10px 10px;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  color: #0f0f0f;
+  border: 1px solid rgb(228, 213, 213);
+  border-radius: 5px;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+.scrollmenu a.active {
   background-color: #000000;
-  color: #ffffff; 
+  color: #ffffff;
   border: none;
 }
 
 
-  .scrollmenu a:hover {
-    background-color: #d0d0d0;
-    color: #000000;
-  }
+.scrollmenu a:hover {
+  background-color: #d0d0d0;
+  color: #000000;
+}
 
 
-  .scroll-btn {
-    background-color: #f1f1f1;
-    border-color: transparent;
-    color: #000000;
-    font-family: "Roboto", sans-serif;
-    font-size: 14px;
-    cursor: pointer;
-    padding: 8px;
-    transition: background-color 0.3s;
-  }
+.scroll-btn {
+  background-color: #48da09;
+  border-color: transparent;
+  color: #f50606;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 8px;
+  transition: background-color 0.3s;
+}
 
-  .scroll-btn:hover {
-    background-color: #ddd;
-    border-radius: 40px;
-  }
+.scroll-btn:hover {
+  background-color: #df08ca;
+  border-radius: 40px;
+}
+
+.scroll-btn button {
+  padding: 8px;
+ 
+  background-color: transparent;
+  border: none;
+  color: rgb(181, 11, 11);
+  font-size: 16px;
+}
